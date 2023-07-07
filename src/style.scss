@@ -1,0 +1,123 @@
+body{
+    background: #222222;
+    margin: 0;
+}
+
+.container{
+    padding: 0 30px;
+    margin: auto;
+    max-width: 1800px;
+}
+
+.highlited{
+    color: #8e7097;
+}
+
+.header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #2525258e;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+
+    &__box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    &__logo{
+        font-size: 45px;
+        margin: 0;
+        text-transform: uppercase;
+        color: #8e7097;
+    }
+
+    &__button{
+        cursor: pointer;
+        width: 35px;
+        display: block;
+        transition: 0.58s .5s;
+
+        span {
+            display: block;
+            font-size: 0;               //робимо лінії невидимими
+            width: 100%;                //розтягнути по всій висоті заданій раніше
+            height: 4px;
+            background: #8e7097;
+            margin-bottom: 8px;         //відстань між лініями
+            transition: 0.58s .5s;
+        }
+    }
+}
+
+.header:after{
+    //ADD SHADOW
+}
+
+.main{
+    z-index: 0;
+    padding-top: 250px;
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__title{
+        font-size: 100px;
+        margin: 0;
+        color: #d6cab8;
+    }
+
+    &__txt{
+        font-size: 45px;
+        color: #d6cab8;
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        margin: 70px 0;
+    }
+
+    &__form-txt{
+        font-size: 30px;
+        opacity: 80%;
+        margin-bottom: 10px;
+    }
+
+    &__input{
+        height: 60px;
+        font-size: 30px;
+        padding: 0 35px;
+        border-radius: 15px;
+        border: 3px solid #d6cab8;
+        background: #575757;
+        outline: none;
+    }
+
+    &__button{
+        text-decoration: none;
+        color: #d6cab8;
+        background: #8e7097;
+        width: 25%;
+        max-width: 380px;
+        text-align: center;
+        border-radius: 50px;
+        margin-top: 35px;
+        padding: 20px 5px;
+    }
+}
+
+.test{
+    p{
+        font-size: 70px;
+    }
+}
