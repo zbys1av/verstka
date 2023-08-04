@@ -120,37 +120,49 @@
             </div>
         </section>
 
+        <!-- taken from https://www.youtube.com/watch?v=j59qQ7YWLxw -->
         <section class="calculator">
             <div class="container">
                 <h3 class="calculator__title">Calculator</h3>
-                <input type="text" class="calculator__display">
+                <div class="calculator__display">
+                    <div data-previous-operand class="calculator__previous"> </div>
+                    <div data-current-operand class="calculator__current"> </div>
+                </div>
                 <div class="calculator__box">
                     <div class="calculator__numbers">
                         <div class="calculator__row">
-                            <button class="calculator__num">1</button>
-                            <button class="calculator__num">2</button>
-                            <button class="calculator__num">3</button>
+                            <button data-number class="calculator__num">1</button>
+                            <button data-number class="calculator__num">2</button>
+                            <button data-number class="calculator__num">3</button>
                         </div>
                         <div class="calculator__row">
-                            <button class="calculator__num">4</button>
-                            <button class="calculator__num">5</button>
-                            <button class="calculator__num">6</button>
+                            <button data-number class="calculator__num">4</button>
+                            <button data-number class="calculator__num">5</button>
+                            <button data-number class="calculator__num">6</button>
                         </div>
                         <div class="calculator__row">
-                            <button class="calculator__num">7</button>
-                            <button class="calculator__num">8</button>
-                            <button class="calculator__num">9</button>
+                            <button data-number class="calculator__num">7</button>
+                            <button data-number class="calculator__num">8</button>
+                            <button data-number class="calculator__num">9</button>
                         </div>
                         <div class="calculator__row">
-                            <button class="calculator__num">0</button>
+                            <button data-number class="calculator__num">.</button>
+                            <button data-number class="calculator__num">0</button>
+                            <button data-equals class="calculator__action calculator__action--equal">=</button>
+
                         </div>
                     </div>
 
                     <div class="calculator__actions">
                         <div class="calculator__row calculator__row--actions">
-                            <button class="calculator__action calculator__action--plus">+</button>
-                            <button class="calculator__action calculator__action--minus">-</button>
-                            <button class="calculator__action calculator__action--equal">=</button>
+                            <button data-operation class="calculator__action calculator__action--plus">+</button>
+                            <button data-operation class="calculator__action calculator__action--minus">-</button>
+                            <button data-all-clear class="calculator__action calculator__action--minus">AC</button>
+                        </div>
+                        <div class="calculator__row calculator__row--actions">
+                            <button data-operation class="calculator__action">/</button>
+                            <button data-operation class="calculator__action">x</button>
+                            <button data-delete class="calculator__action">DEL</button>
                         </div>
                     </div>
                 </div>

@@ -343,8 +343,8 @@ body{
 
     &__display{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        align-items: end;
         margin: auto;
         padding: 25px 90px;
         border-radius: 15px;
@@ -355,6 +355,13 @@ body{
         outline: none;
         color: #d6cab8;
         pointer-events: none;
+        font-weight: bold;
+        gap: 10px;
+    }
+
+    &__previous{
+        font-size: 27px;
+        color: #222222;
     }
 
     &__numbers{
@@ -372,6 +379,10 @@ body{
         &--actions{
             flex-direction: column;
             margin-left: 50px;
+
+            &:nth-child(2){
+                margin: 0;
+            }
         }
     }
 
@@ -390,6 +401,11 @@ body{
             cursor: pointer;
             border: 1px solid transparent;
         }
+    }
+
+    &__actions{
+        display: flex;
+        flex-direction: row;
     }
 
     &__action{
