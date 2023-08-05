@@ -63,30 +63,28 @@ class Calculator {
     }
 
     getDisplayNumber(number) {
-        const stringNumber = number.toString()
-        const integerDigits = parseFloat(stringNumber.split('.')[0])
-        const decimalDigits = stringNumber.split('.')[1]
-        let integerDisplay
+        const stringNumber = number.toString();
+        const integerDigits = parseFloat(stringNumber.split('.')[0]);
+        const decimalDigits = stringNumber.split('.')[1];
+        let integerDisplay;
         if (isNaN(integerDigits)) {
-            integerDisplay = ''
+            integerDisplay = '';
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
         }
         if (decimalDigits != null) {
-            return `${integerDisplay}.${decimalDigits}`
+            return `${integerDisplay}.${decimalDigits}`;
         } else {
-            return integerDisplay
+            return integerDisplay;
         }
     }
 
     updateDisplay() {
-        this.currentOperandTextElement.innerText =
-        this.getDisplayNumber(this.currentOperand)
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
-        this.previousOperandTextElement.innerText =
-            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+            this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
         } else {
-        this.previousOperandTextElement.innerText = ''
+            this.previousOperandTextElement.innerText = '';
         }
     }
 }
@@ -104,8 +102,8 @@ class Calculator {
 
     numberButtons.forEach(button => {
         button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
+            calculator.appendNumber(button.innerText);
+            calculator.updateDisplay();
         })
     })
 
@@ -130,3 +128,18 @@ class Calculator {
         calculator.delete();
         calculator.updateDisplay();
     });
+
+
+    const testDisplay = document.querySelector('.calculator__display--test');
+    const testBtn = document.querySelector('.test-btn');
+
+    testBtn.addEventListener("click", testFunction);
+    // console.log(testBtn.innerText);
+
+
+    testDisplay.addEventListener("click", testFunction);
+    console.log(testDisplay.innerText);
+
+    function testFunction(){
+        testDisplay.innerText = testDisplay.innerText + currentOperandTextElement.innerText;
+    }

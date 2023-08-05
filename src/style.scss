@@ -346,7 +346,7 @@ body{
         flex-direction: column;
         align-items: end;
         margin: auto;
-        padding: 25px 90px;
+        padding: 20px 90px;
         border-radius: 15px;
         width: 400px;
         background: #d6cab846;
@@ -357,11 +357,23 @@ body{
         pointer-events: none;
         font-weight: bold;
         gap: 10px;
+
+        &--test{
+            margin-top: 20px;
+        }
     }
 
     &__previous{
         font-size: 27px;
         color: #222222;
+        margin: 0;
+        height: 27px;
+    }
+
+    &__current{
+        margin: 0;
+        height: 45px;
+        font-size: 45px;
     }
 
     &__numbers{
@@ -401,6 +413,11 @@ body{
             cursor: pointer;
             border: 1px solid transparent;
         }
+
+        &:active{
+            background: #8e7097;
+            transition: 0.1s;
+        }
     }
 
     &__actions{
@@ -422,6 +439,46 @@ body{
             color: #575757;
             cursor: pointer;
             border: 1px solid transparent;
+        }
+
+        &:active{
+            background: #8e7097;
+            transition: 0.1s;
+        }
+
+        &--equal{
+            background: #8e70975e;
+
+            &:hover{
+                background: #8e7097;
+                color: #d6cab8;
+            }
+
+            &:active{
+                background: #d6cab8;
+                color: #8e7097;
+                transition: 0.1s;
+            }
+        }
+
+        &--delete{
+            background: #5757575e;
+            font-size: 18px;
+
+            &:hover{
+                color: #d6cab8;
+                background: #575757;
+            }
+        }
+
+        &--clear{
+            background: #5757575e;
+            font-size: 18px;
+
+            &:hover{
+                color: #d6cab8;
+                background: #575757;
+            }
         }
     }
 }
